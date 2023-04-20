@@ -24,7 +24,9 @@ namespace E72LET_HFT_2022232.Models
 
         //Az ár euróban értendő
         [Range(0, 100)]
-        public int Price { get; set; } 
+        public int Price { get; set; }
+        public virtual MinimalSystemRequirements Minimal { get; set; }
+        public virtual Studio Studio { get; set; }
 
     
 
