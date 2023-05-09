@@ -1,5 +1,6 @@
 ﻿using E72LET_HFT_2022232.Repository;
 using System;
+using System.Linq;
 
 namespace E72LET_HFT_2022232
 {
@@ -8,7 +9,11 @@ namespace E72LET_HFT_2022232
         static void Main(string[] args)
         {
             GameDbContext db = new GameDbContext();
-            var games = db.Games;
+            var games = db.Games.ToArray();
+            var minimal = db.MinimalSystemRequirements.ToArray();
+            var studio = db.Studios.ToArray();
+            ;
+            
         }
     }
 }
