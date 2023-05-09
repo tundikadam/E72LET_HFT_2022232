@@ -4,7 +4,7 @@ using System;
 
 namespace E72LET_HFT_2022232.Repository
 {
-   internal class GameDbContext : DbContext
+   public class GameDbContext : DbContext
     {
         public DbSet<Game> Games { get; set; }
         public DbSet<MinimalSystemRequirements> MinimalSystemRequirements { get; set; }
