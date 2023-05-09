@@ -1,4 +1,5 @@
-﻿using System;
+﻿using E72LET_HFT_2022232.Repository;
+using System;
 
 namespace E72LET_HFT_2022232
 {
@@ -6,7 +7,8 @@ namespace E72LET_HFT_2022232
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            GameDbContext db = new GameDbContext();
+            var games = db.Games;
         }
     }
 }
