@@ -8,5 +8,6 @@ namespace E72LET_HFT_2022232.Repository
         public GameDbContext()
         { Database.EnsureCreated(); }
 
+
     }
 }
