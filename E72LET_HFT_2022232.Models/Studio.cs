@@ -10,7 +10,7 @@ namespace E72LET_HFT_2022232.Models
 {
     public class Studio
     {
-        public Studio(int studioId, int studioName)
+        public Studio(int studioId, string studioName)
         {
             StudioId = studioId;
             StudioName = studioName;
@@ -21,7 +21,7 @@ namespace E72LET_HFT_2022232.Models
         
       public  int StudioId { get; set; }
         [StringLength(50)]
-       public int StudioName { get; set; }
+       public string StudioName { get; set; }
         [NotMapped]
         public virtual ICollection<Game> Games { get; set; }
 
