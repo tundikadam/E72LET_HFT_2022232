@@ -60,8 +60,8 @@ namespace E72LET_HFT_2022232.Repository
                 {new Studio(1,"SCS Software"),
                 new Studio(2,"Contendo media"),
                 new Studio(3,"Libredia"),
-                new Studio(4,"SCS Software"),
-                new Studio(1,"SCS Software"),
+                new Studio(4,"Activison"),
+                new Studio(5,"Rockstar Games"),
 
                 }) ;
         }
