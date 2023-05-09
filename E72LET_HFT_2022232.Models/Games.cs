@@ -26,6 +26,7 @@ namespace E72LET_HFT_2022232.Models
         [Range(0, 100)]
         public int Price { get; set; }
         public virtual MinimalSystemRequirements Minimal { get; set; }
+        [NotMapped]
         public virtual Studio Studio { get; set; }
 
     
