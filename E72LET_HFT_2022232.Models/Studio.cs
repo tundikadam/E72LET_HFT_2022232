@@ -19,9 +19,9 @@ namespace E72LET_HFT_2022232.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         
-        int StudioId { get; set; }
+      public  int StudioId { get; set; }
         [StringLength(50)]
-        int StudioName { get; set; }
+       public int StudioName { get; set; }
         [NotMapped]
         public virtual ICollection<Games> Games { get; set; }
 

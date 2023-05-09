@@ -16,6 +16,8 @@ namespace E72LET_HFT_2022232.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        public int StudioId { get; set; }
+        public int MinimalSystemRequirementsId { get; set; }
         [StringLength(50)]
         public string Name { get; set; }
         [Range(0,18)]

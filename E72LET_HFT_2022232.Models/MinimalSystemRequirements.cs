@@ -10,9 +10,9 @@ namespace E72LET_HFT_2022232.Models
 {
     public class MinimalSystemRequirements
     {
-        public MinimalSystemRequirements(int gameId, string operatingSystem, float rAM_size, int sSD_space, string cPU_Brand, float cPU_ClockSpeed, string vGA_Brand, float vGA_MemorySize, float vGA_ClockSpeed)
+        public MinimalSystemRequirements( string operatingSystem, float rAM_size, int sSD_space, string cPU_Brand, float cPU_ClockSpeed, string vGA_Brand, float vGA_MemorySize, float vGA_ClockSpeed)
         {
-            GameId = gameId;
+            
             OperatingSystem = operatingSystem;
             RAM_size = rAM_size;
             SSD_space = sSD_space;
@@ -25,28 +25,28 @@ namespace E72LET_HFT_2022232.Models
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        int GameId { get; set; }
+     public    int MinimalSystemRequirementsId { get; set; }
         [StringLength(50)]
-        string OperatingSystem { get; set; }
+    public    string OperatingSystem { get; set; }
         [Range(1, 64)]
-        float RAM_size { get; set; }
+    public    float RAM_size { get; set; }
 
         [Range(1, 200)]
         //A méret GB-ban értendő
 
-        int SSD_space { get; set; }
+     public   int SSD_space { get; set; }
         [StringLength( 50)]
-        string CPU_Brand { get; set; }
+     public   string CPU_Brand { get; set; }
 
         //A CPU órajele Gigahertzben értendő
         [Range(1,5)]
-        float CPU_ClockSpeed{get;set;}
+   public     float CPU_ClockSpeed{get;set;}
         [StringLength(50)]
-        string VGA_Brand { get; set; }
+     public   string VGA_Brand { get; set; }
         [Range(0,32)]
-        float VGA_MemorySize { get; set; }
+     public   float VGA_MemorySize { get; set; }
         [Range(0,5)]
-        float VGA_ClockSpeed { get; set; }
+      public  float VGA_ClockSpeed { get; set; }
         [NotMapped]
         public virtual ICollection<Games> Games { get; set; }
        

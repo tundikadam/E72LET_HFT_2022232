@@ -6,10 +6,14 @@
 
   <ItemGroup>
     <None Remove="games.mdf" />
+    <None Remove="games_log.ldf" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="games.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="games_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -20,9 +20,18 @@ namespace E72LET_HFT_2022232.Repository
                 optionsBuilder.UseSqlServer
                     (conn).UseLazyLoadingProxies();
             }
+           
 
 
 
+    }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {//Games minimális rendszerigény közti kapcsolat
+
+            modelBuilder.Entity<Games>().HasOne(t => t.Minimal).WithMany(t => t.Games).HasForeignKey(t => t.MinimalSystemRequirementsId).OnDelete(DeleteBehavior.Cascade);
+            //Games studio tábla közötti kapcsolat
+            modelBuilder.Entity<Games>().HasOne(t => t.Studio).WithMany(t => t.Games).HasForeignKey(t=>t.StudioId).OnDelete(DeleteBehavior.Cascade);
+           
         }
     }
 }
