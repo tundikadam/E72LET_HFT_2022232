@@ -4,15 +4,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace E72LET_HFT_2022232.Models
 {
-    public class Games
+    public class Game
     {
-        public Games(string name, int age_Limit, int price, int id)
+        public Game(int id, int studioId, int minimalSystemRequirementsId, string name, int age_Limit, int price)
         {
+            Id = id;
+            StudioId = studioId;
+            MinimalSystemRequirementsId = minimalSystemRequirementsId;
             Name = name;
             Age_Limit = age_Limit;
             Price = price;
-            Id = id;
         }
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
