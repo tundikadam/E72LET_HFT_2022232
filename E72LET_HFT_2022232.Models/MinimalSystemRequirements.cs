@@ -48,7 +48,7 @@ namespace E72LET_HFT_2022232.Models
         [Range(0,5)]
       public  float VGA_ClockSpeed { get; set; }
         [NotMapped]
-        public virtual ICollection<Games> Games { get; set; }
+        public virtual ICollection<Game> Games { get; set; }
        
 
     }

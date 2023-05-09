@@ -23,7 +23,7 @@ namespace E72LET_HFT_2022232.Models
         [StringLength(50)]
        public int StudioName { get; set; }
         [NotMapped]
-        public virtual ICollection<Games> Games { get; set; }
+        public virtual ICollection<Game> Games { get; set; }
 
     }
 }
