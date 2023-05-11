@@ -12,8 +12,8 @@ namespace E72LET_HFT_2022232
         {
             var ctx = new GameDbContext();
             var repo = new GameRepository(ctx);
-            var logic = new GameLogic(repo);
-            
+            var gamelogic = new GameLogic(repo);
+            var studiologic = new StudioLogic();
           
              
 

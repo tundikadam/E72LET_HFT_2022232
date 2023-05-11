@@ -11,6 +11,9 @@ namespace E72LET_HFT_2022232.Logic
     public class StudioLogic : IStudioLogic
     {
         IRepository<Studio> repo;
+
+        
+
         public void Create(Studio item)
         {
             if (item.StudioName.Length < 5)

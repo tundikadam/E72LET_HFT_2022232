@@ -11,6 +11,12 @@ namespace E72LET_HFT_2022232.Logic
     internal class MinimalSystemRequriementsLogic : IMinimalSystemRequriementsLogic
     {
         IRepository<MinimalSystemRequirements> repo;
+
+        public MinimalSystemRequriementsLogic(IRepository<MinimalSystemRequirements> repo)
+        {
+            this.repo = repo;
+        }
+
         public void Create(MinimalSystemRequirements item)
         {
             if (item.OperatingSystem.Length<3)
