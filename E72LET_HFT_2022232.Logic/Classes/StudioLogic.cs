@@ -12,7 +12,10 @@ namespace E72LET_HFT_2022232.Logic
     {
         IRepository<Studio> repo;
 
-        
+        public StudioLogic(IRepository<Studio> repo)
+        {
+            this.repo = repo;
+        }
 
         public void Create(Studio item)
         {
