@@ -43,6 +43,7 @@ namespace E72LET_HFT_2022232.Repository
                  new Game(10,5,8,"Grand Theft Auto San Andreas",18,2005,63),
                  new Game(11,5,9,"Grand Theft Auto 4",18,2009,20),
                  
+                 
                 });
             modelBuilder.Entity<MinimalSystemRequirements>().HasData(new MinimalSystemRequirements[]
                 {new MinimalSystemRequirements(1,"Windows Xp",2048,1.5,"Intel Core 2 Duo",2.4,"Nvidia GeForce GTS 450",1024),
