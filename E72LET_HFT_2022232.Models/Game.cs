@@ -6,15 +6,15 @@ namespace E72LET_HFT_2022232.Models
 {
     public class Game
     {
-        public Game(int id, int studioId, int minimalSystemRequirementsId, string name, int age_Limit, int price,int appearance)
+        public Game(int id, int studioId, int minimalSystemRequirementsId, string name, int age_Limit, int appearance, int price)
         {
             Id = id;
             StudioId = studioId;
             MinimalSystemRequirementsId = minimalSystemRequirementsId;
             Name = name;
             Age_Limit = age_Limit;
-            Price = price;
             Appearance = appearance;
+            Price = price;
         }
 
         [Key]
