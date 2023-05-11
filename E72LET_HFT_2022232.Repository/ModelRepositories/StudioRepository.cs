@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E72LET_HFT_2022232.Repository
+namespace E72LET_HFT_2022232.Repository.ModelRepositories
 {
     public class StudioRepository : Repository<Studio>, IRepository<Studio>
     {

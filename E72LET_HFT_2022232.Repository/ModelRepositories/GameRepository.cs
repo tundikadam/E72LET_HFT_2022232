@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E72LET_HFT_2022232.Repository
+namespace E72LET_HFT_2022232.Repository.ModelRepositories
 {
     public class GameRepository : Repository<Game>, IRepository<Game>
     {
@@ -22,7 +22,7 @@ namespace E72LET_HFT_2022232.Repository
         public override void Update(Game item)
         {
             var old = Read(item.Id);
-            foreach(var prop in old.GetType().GetProperties())
+            foreach (var prop in old.GetType().GetProperties())
             { prop.SetValue(old, prop.GetValue(item)); }
             ctx.SaveChanges();
         }

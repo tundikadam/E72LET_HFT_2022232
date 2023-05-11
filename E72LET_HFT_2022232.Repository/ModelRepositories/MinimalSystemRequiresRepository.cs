@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E72LET_HFT_2022232.Repository
+namespace E72LET_HFT_2022232.Repository.ModelRepositories
 {
     public class MinimalSystemRequiresRepository : Repository<MinimalSystemRequirements>, IRepository<MinimalSystemRequirements>
     {
@@ -15,7 +15,7 @@ namespace E72LET_HFT_2022232.Repository
 
         public override MinimalSystemRequirements Read(int id)
         {
-            return ctx.MinimalSystemRequirements.FirstOrDefault(t=>t.MinimalSystemRequirementsId==id);
+            return ctx.MinimalSystemRequirements.FirstOrDefault(t => t.MinimalSystemRequirementsId == id);
         }
 
         public override void Update(MinimalSystemRequirements item)
