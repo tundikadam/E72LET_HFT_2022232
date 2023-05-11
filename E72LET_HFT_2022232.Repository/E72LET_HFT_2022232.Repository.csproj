@@ -33,4 +33,8 @@
     <ProjectReference Include="..\E72LET_HFT_2022232.Models\E72LET_HFT_2022232.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ModelRepositories\" />
+  </ItemGroup>
+
 </Project>
