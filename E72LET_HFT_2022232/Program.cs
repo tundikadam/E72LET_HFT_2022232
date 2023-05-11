@@ -14,14 +14,8 @@ namespace E72LET_HFT_2022232
             var repo = new GameRepository(ctx);
             var logic = new GameLogic(repo);
             
-            Game g = new Game(100, 100, 100, "Honfoglalo", 3, 1000, 10);
-            logic.Create(g);
-            
-            logic.Delete(100);
-            var items = logic.ReadAll().ToArray();
-            var activision = logic.ActivisionsGamePriceAverage();
-            var contendo = logic.ContendoCount();
-             ;
+          
+             
 
 
 
