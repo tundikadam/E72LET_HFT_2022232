@@ -32,17 +32,18 @@ namespace E72LET_HFT_2022232.Repository
             //Games studio tábla közötti kapcsolat
             modelBuilder.Entity<Game>().HasOne(t => t.Studio).WithMany(t => t.Games).HasForeignKey(t => t.StudioId).OnDelete(DeleteBehavior.Cascade);
             modelBuilder.Entity<Game>().HasData(new Game[]
-                {new Game(1,1,1,"Scania Truck Driving Simulator",3,10,2012),
-                new Game(2,1,2,"Bus Driver",3,18,2007),
-                new Game(3,2,3,"Bus Simulator",3,10,2008),
-                new Game(4 ,3,3,"Skycraper Simulator",3,3,2010),
-               new Game(5,4,4,"Call of Duty 1",16,10,2003),
-               new Game(6,4,5,"Call of Duty 4",16,10,2007),
-                 new Game(7,4,5,"Call of Duty World at War",18,15,2008),
-                 new Game(8,4,6,"Call of Duty Black Ops 3",18,15,2015),
-                 new Game(9,4,7,"Call of Duty Wolrd at War 2",18,20,2017),
-                 new Game(10,5,8,"Grand Theft Auto San Andreas",18,63,2005),
-                 new Game(11,5,9,"Grand Theft Auto 4",18,20,2009),
+                {new Game(1,1,1,"Scania Truck Driving Simulator",3,2012,10),
+                new Game(2,1,2,"Bus Driver",3,2007,18),
+                new Game(3,2,3,"Bus Simulator",3,2008,10),
+                new Game(4 ,3,3,"Skycraper Simulator",3,2010,10),
+               new Game(5,4,4,"Call of Duty 1",16,2003,10),
+               new Game(6,4,5,"Call of Duty 4",16,2007,10),
+                 new Game(7,4,5,"Call of Duty World at War",18,2008,15),
+                 new Game(8,4,6,"Call of Duty Black Ops 3",18,2015,15),
+                 new Game(9,4,7,"Call of Duty Wolrd at War 2",18,2017,20),
+                 new Game(10,5,8,"Grand Theft Auto San Andreas",18,2005,63),
+                 new Game(11,5,9,"Grand Theft Auto 4",18,2009,20),
+                 
                 });
             modelBuilder.Entity<MinimalSystemRequirements>().HasData(new MinimalSystemRequirements[]
                 {new MinimalSystemRequirements(1,"Windows Xp",2048,1.5,"Intel Core 2 Duo",2.4,"Nvidia GeForce GTS 450",1024),
