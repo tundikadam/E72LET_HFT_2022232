@@ -6,7 +6,7 @@ namespace E72LET_HFT_2022232.Models
 {
     public class Game
     {
-        public Game(int id, int studioId, int minimalSystemRequirementsId, string name, int age_Limit, int price)
+        public Game(int id, int studioId, int minimalSystemRequirementsId, string name, int age_Limit, int price,int appearance)
         {
             Id = id;
             StudioId = studioId;
@@ -14,6 +14,7 @@ namespace E72LET_HFT_2022232.Models
             Name = name;
             Age_Limit = age_Limit;
             Price = price;
+            Appearance = appearance;
         }
 
         [Key]
@@ -25,6 +26,9 @@ namespace E72LET_HFT_2022232.Models
         public string Name { get; set; }
         [Range(0,18)]
         public int Age_Limit { get; set; }
+        [Range(1990,2023)]
+        
+        public int Appearance { get; set; }
 
 
         //Az ár euróban értendő
