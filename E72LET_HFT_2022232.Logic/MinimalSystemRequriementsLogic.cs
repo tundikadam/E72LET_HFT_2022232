@@ -13,7 +13,10 @@ namespace E72LET_HFT_2022232.Logic
         IRepository<MinimalSystemRequirements> repo;
         public void Create(MinimalSystemRequirements item)
         {
-            repo.Create(item);
+            if (item.OperatingSystem.Length<3)
+            { throw new ArgumentException("The operating system's name is too short"); }
+
+            this.repo.Create(item);
         }
 
         public void Delete(int id)
@@ -23,7 +26,10 @@ namespace E72LET_HFT_2022232.Logic
 
         public MinimalSystemRequirements Read(int id)
         {
-            return repo.Read(id);
+            var minimal = this.repo.Read(id);
+            if (minimal == null)
+            { throw new ArgumentException("This system requriement not exists"); }
+            return minimal;
         }
 
         public IQueryable<MinimalSystemRequirements> ReadAll()
