@@ -11,9 +11,12 @@ namespace E72LET_HFT_2022232
         static void Main(string[] args)
         {
             var ctx = new GameDbContext();
-            var repo = new GameRepository(ctx);
-            var gamelogic = new GameLogic(repo);
-            var studiologic = new StudioLogic();
+            var gamerepo = new GameRepository(ctx);
+            var studiorepo = new StudioRepository(ctx);
+            var minimalrepo = new MinimalSystemRequiresRepository(ctx); 
+            var gamelogic = new GameLogic(gamerepo);
+            var studiologic = new StudioLogic(studiorepo);
+            var minimallogic = new MinimalSystemRequriementsLogic(minimalrepo);
           
              
 

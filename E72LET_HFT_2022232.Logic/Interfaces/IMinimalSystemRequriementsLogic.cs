@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace E72LET_HFT_2022232.Logic
 {
-    internal interface IMinimalSystemRequriementsLogic
+    public interface IMinimalSystemRequriementsLogic
     {
         void Create(MinimalSystemRequirements item);
         void Delete(int id);
