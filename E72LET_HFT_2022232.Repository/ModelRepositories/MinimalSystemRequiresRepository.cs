@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E72LET_HFT_2022232.Repository.ModelRepositories
+namespace E72LET_HFT_2022232.Repository
 {
     public class MinimalSystemRequiresRepository : Repository<MinimalSystemRequirements>, IRepository<MinimalSystemRequirements>
     {

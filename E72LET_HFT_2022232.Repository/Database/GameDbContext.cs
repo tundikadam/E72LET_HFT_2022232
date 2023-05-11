@@ -16,9 +16,8 @@ namespace E72LET_HFT_2022232.Repository
         {
             if (!optionsBuilder.IsConfigured)
             {
-                string conn = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename =G:\Egyetem\4\Haladó fejlesztési technikák\Féléves\Feladat\E72LET_HFT_2022232\E72LET_HFT_2022232.Repository\games.mdf; Integrated Security = True;MultipleActiveResultSets=True";
-                optionsBuilder.UseSqlServer
-                    (conn).UseLazyLoadingProxies();
+               // string conn = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename =G:\Egyetem\4\Haladó fejlesztési technikák\Féléves\Feladat\E72LET_HFT_2022232\E72LET_HFT_2022232.Repository\games.mdf; Integrated Security = True;MultipleActiveResultSets=True";
+                optionsBuilder.UseInMemoryDatabase("games").UseLazyLoadingProxies();
             }
 
 
