@@ -12,7 +12,7 @@ namespace E72LET_HFT_2022232
             var games = db.Games.ToArray();
             var studios = db.Studios.ToArray();
             var minimalsystem = db.MinimalSystemRequirements.ToArray();
-            ;
+            
         }
     }
 }
