@@ -46,7 +46,7 @@ namespace E72LET_HFT_2022232.Logic
         }
         //Az Activision által kiadott játékok átlagára
         public double? ActivisionsGamePriceAverage()
-        { return this.repo.ReadAll().Where(t => t.Studio.StudioName == "Activison").Average(t => t.Price); }
+        { return this.repo.ReadAll().Where(t => t.Studio.StudioName =="Activison").Average(t => t.Price); }
 
         //A Contendo Media által kiadott játékok száma
         public int? ContendoCount()

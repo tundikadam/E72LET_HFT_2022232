@@ -17,8 +17,11 @@ namespace E72LET_HFT_2022232
             var gamelogic = new GameLogic(gamerepo);
             var studiologic = new StudioLogic(studiorepo);
             var minimallogic = new MinimalSystemRequriementsLogic(minimalrepo);
-            
-          
+           Console.WriteLine("Activison"+  gamelogic.ActivisionsGamePriceAverage());
+            Console.WriteLine("Contendo"+gamelogic.ContendoCount());
+            Console.WriteLine("Newest"+gamelogic.NewestGame());
+            Console.WriteLine("Windows 98"+gamelogic.CountOfWin98());
+            Console.WriteLine("Libredia"+gamelogic.LibrediaAgeLimit());
              
 
 
