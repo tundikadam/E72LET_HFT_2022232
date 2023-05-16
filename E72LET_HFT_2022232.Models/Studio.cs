@@ -25,6 +25,17 @@ namespace E72LET_HFT_2022232.Models
         [NotMapped]
         public virtual ICollection<Game> Games { get; set; }
 
+        public override bool Equals(object obj)
+        {
+            Studio s = obj as Studio;
+            if (s == null)
+            { return false; }
+            else { return (this.StudioId == s.StudioId) && (this.StudioName == s.StudioName); }
+        }
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(this.StudioId, this.StudioName);
+        }
     }
 }
 

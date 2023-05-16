@@ -56,10 +56,12 @@ namespace E72LET_HFT_2022232.Logic
         { return this.repo.ReadAll().Where(t => t.Minimal.OperatingSystem == "Windows 98").Count(); }
 
         //Legújabb játék kiadója
-        public int NewestGame()
-        { return this.repo.ReadAll().OrderByDescending(t => t.Appearance).First().Appearance; }
+        public string NewestGame()
+        { return this.repo.ReadAll().OrderByDescending(t => t.Appearance).First().Studio.StudioName; }
         //Mikor jelent meg az első, Rockstar Games által kiadott játék
         public int LibrediaAgeLimit()
         { return this.repo.ReadAll().Where(t => t.Studio.StudioName == "Rockstar Games").OrderBy(t => t.Appearance).First().Appearance; }
+
+          
     }
 }

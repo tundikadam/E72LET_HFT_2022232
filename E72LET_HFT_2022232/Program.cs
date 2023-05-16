@@ -17,6 +17,7 @@ namespace E72LET_HFT_2022232
             var gamelogic = new GameLogic(gamerepo);
             var studiologic = new StudioLogic(studiorepo);
             var minimallogic = new MinimalSystemRequriementsLogic(minimalrepo);
+            
           
              
 

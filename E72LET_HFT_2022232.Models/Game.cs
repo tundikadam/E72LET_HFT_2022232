@@ -39,7 +39,18 @@ namespace E72LET_HFT_2022232.Models
         [NotMapped]
         public virtual Studio Studio { get; set; }
 
-    
+        public override bool Equals(object obj)
+        {
+            Game g = obj as Game;
+            if(g==null)
+            { return false; }
+            else { return (this.Id == g.Id) &&( this.StudioId == g.StudioId) && (this.MinimalSystemRequirementsId == g.MinimalSystemRequirementsId )&& (this.Name == g.Name) && (this.Age_Limit == g.Age_Limit) && (this.Appearance == g.Appearance )&&( this.Price == g.Price); }
+        }
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(this.Id, this.StudioId, this.MinimalSystemRequirementsId, this.Name, this.Age_Limit, this.Appearance, this.Price);
+;        }
+
 
 
     }

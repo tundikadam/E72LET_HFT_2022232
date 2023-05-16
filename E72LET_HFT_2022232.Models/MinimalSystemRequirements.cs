@@ -52,7 +52,18 @@ namespace E72LET_HFT_2022232.Models
      
         [NotMapped]
         public virtual ICollection<Game> Games { get; set; }
-       
+        public override bool Equals(object obj)
+        {
+            MinimalSystemRequirements min = obj as MinimalSystemRequirements;
+              
+            if (min == null)
+            { return false; }
+            else { return (this.MinimalSystemRequirementsId == min.MinimalSystemRequirementsId) && (this.OperatingSystem==min.OperatingSystem) && (this.RAM_size==min.RAM_size) && (this.SSD_space==min.SSD_space) && (this.CPU_Brand==min.CPU_Brand) && (this.CPU_ClockSpeed == min.CPU_ClockSpeed) && (this.VGA_Brand==min.VGA_Brand)&&(this.VGA_MemorySize==min.VGA_MemorySize); }
+        }
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(this.MinimalSystemRequirementsId, this.OperatingSystem, this.RAM_size, this.SSD_space, this.CPU_Brand, this.CPU_ClockSpeed, this.VGA_Brand,this.VGA_MemorySize);
+        }
 
     }
 }

@@ -11,7 +11,7 @@ namespace E72LET_HFT_2022232.Logic
         void Create(Game item);
         void Delete(int id);
         int LibrediaAgeLimit();
-        int NewestGame();
+        string NewestGame();
         Game Read(int id);
         IQueryable<Game> ReadAll();
         void Update(Game item);
