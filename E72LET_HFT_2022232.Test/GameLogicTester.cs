@@ -110,7 +110,47 @@ namespace E72LET_HFT_2022232.Test
         { MinimalSystemRequirements min = new MinimalSystemRequirements(100, "Windows 10", 2048, 20, "Intel Core I3", 3, "AMD Radeon R7 360", 2048);
             minlogic.Create(min);
             mockMinRepo.Verify(x => x.Create(min), Times.Once());
+
+
+}
+
+        [Test]
+        public void GameCreateInvalid()
+        { Game g = new Game(100, 100, 100, "Game", 3, 2010, 10);
+            
+            Assert.That(() => gamelogic.Create(g), Throws.TypeOf<ArgumentException>());
         }
+        [Test]
+        public void StudioCreateInvalid()
+        { Studio s = new Studio(100, "Stu");
+            Assert.That(() => studiologic.Create(s), Throws.TypeOf<ArgumentException>());
+        }
+        [Test]
+        public void MinimalSystemRequriementCreateInvalid()
+        { MinimalSystemRequirements min = new MinimalSystemRequirements(100, "OS", 2048, 20, "Intel Core I5", 3, "Nvidia Geforce 750 Ti", 2048);
+            Assert.That(() => minlogic.Create(min), Throws.TypeOf<ArgumentException>());
+        }
+        [Test]
+        public void GameReadValidTest()
+        { Game readed = gamelogic.Read(1);
+            Game first = new Game(1, 1, 1, "GameA", 3, 2012, 10);
+            Assert.That(readed, Is.EqualTo(first));
+            
+        }
+        [Test]
+        public void GameReadInvalidTest()
+        {
+            Assert.That(() => gamelogic.Read(50), Throws.TypeOf<ArgumentException>());
+        }
+        [Test]
+        public void StudioReadValidTest()
+        { Studio readed = studiologic.Read(1);
+            Studio first = new Studio(1, "SCS Software");
+            Assert.That(readed, Is.EqualTo(first));
+        }
+        [Test]
+        public void StudioReadInvalidTest()
+        { Assert.That(() => studiologic.Read(20), Throws.TypeOf<ArgumentException>());    }
         [Test]
         public void CountOfWin98()
         { int? count = gamelogic.CountOfWin98();
