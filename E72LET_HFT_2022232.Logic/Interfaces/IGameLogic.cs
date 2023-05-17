@@ -10,7 +10,7 @@ namespace E72LET_HFT_2022232.Logic
         int? CountOfWin98();
         void Create(Game item);
         void Delete(int id);
-        int LibrediaAgeLimit();
+        int FirstRockstar();
         string NewestGame();
         Game Read(int id);
         IQueryable<Game> ReadAll();

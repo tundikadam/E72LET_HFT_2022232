@@ -83,8 +83,8 @@ namespace E72LET_HFT_2022232.Test
             mockMinRepo.Setup(x => x.Read(7)).Returns(new MinimalSystemRequirements(7, "Windows 7", 8192, 90, "Intel Core I3-3225", 3.3, "Nvidia GeForce GTX 660", 2048));
             mockMinRepo.Setup(x => x.Read(8)).Returns(new MinimalSystemRequirements(8, "Windows 2000", 256, 3.6, "Intel Pentium 3", 1, "Nvidia GeForce 3", 256));
             mockMinRepo.Setup(x => x.Read(9)).Returns(new MinimalSystemRequirements(9, "Windows Xp", 1536, 16, "Intel Core 2 Duo", 1.8, "Nvidia GeForce GTS 7900", 256));
-            
-            gamelogic = new GameLogic(mockGameRepo.Object);
+
+            gamelogic = new GameLogic(mockGameRepo.Object,mockStudioRepo.Object,mockMinRepo.Object);
             minlogic = new MinimalSystemRequriementsLogic(mockMinRepo.Object);
             studiologic = new StudioLogic(mockStudioRepo.Object);
         }
@@ -151,14 +151,30 @@ namespace E72LET_HFT_2022232.Test
         [Test]
         public void StudioReadInvalidTest()
         { Assert.That(() => studiologic.Read(20), Throws.TypeOf<ArgumentException>());    }
+
         [Test]
+        public void MinimalSystemRequrimentsReadValidTest()
+        { MinimalSystemRequirements readed = minlogic.Read(1);
+            MinimalSystemRequirements first = new MinimalSystemRequirements(1, "Windows Xp", 2048, 1.5, "Intel Core 2 Duo", 2.4, "Nvidia GeForce GTS 450", 1024);
+            Assert.That(readed, Is.EqualTo(first));
+        }
+
+        [Test]
+        public void MinimalSystemRequrimentsReadInvalidTest()
+        { Assert.That(() => minlogic.Read(78), Throws.TypeOf<ArgumentException>()); }
+
+        //Non Crud Tests
+
+        [Test]
+        
         public void CountOfWin98()
         { int? count = gamelogic.CountOfWin98();
             Assert.That(count, Is.EqualTo(2));
         }
         [Test]
-        public void LibrediaAgeLimitTest()
-        { int? libredia = gamelogic.LibrediaAgeLimit();
+        public void FirstRockstarTest()
+        {
+            int? libredia = gamelogic.FirstRockstar();
             Assert.That(libredia,Is.EqualTo( 2005));
         }
         [Test]
