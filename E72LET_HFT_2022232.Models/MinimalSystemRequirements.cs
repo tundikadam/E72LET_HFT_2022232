@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace E72LET_HFT_2022232.Models
@@ -50,8 +51,9 @@ namespace E72LET_HFT_2022232.Models
         //A VGA memória mérete MB-ban értendő
      public  int VGA_MemorySize { get; set; }
      
-        [NotMapped]
-        public virtual ICollection<Game> Games { get; set; }
+     //   [NotMapped]
+      //  [JsonIgnore]
+        //public virtual ICollection<Game> Games { get; set; }
         public override bool Equals(object obj)
         {
             MinimalSystemRequirements min = obj as MinimalSystemRequirements;

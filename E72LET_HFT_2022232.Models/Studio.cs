@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace E72LET_HFT_2022232.Models
 {
@@ -22,8 +23,9 @@ namespace E72LET_HFT_2022232.Models
       public  int StudioId { get; set; }
         [StringLength(50)]
        public string StudioName { get; set; }
-        [NotMapped]
-        public virtual ICollection<Game> Games { get; set; }
+      //  [NotMapped]
+       // [JsonIgnore]
+       // public virtual ICollection<Game> Games { get; set; }
 
         public override bool Equals(object obj)
         {

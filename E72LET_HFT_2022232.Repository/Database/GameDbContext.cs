@@ -27,9 +27,9 @@ namespace E72LET_HFT_2022232.Repository
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {//Games minimális rendszerigény közti kapcsolat
 
-            modelBuilder.Entity<Game>().HasOne(t => t.Minimal).WithMany(t => t.Games).HasForeignKey(t => t.MinimalSystemRequirementsId).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Game>(game => game.HasOne<MinimalSystemRequirements>().WithMany().HasForeignKey(game =>game.MinimalSystemRequirementsId).OnDelete(DeleteBehavior.Cascade));
             //Games studio tábla közötti kapcsolat
-            modelBuilder.Entity<Game>().HasOne(t => t.Studio).WithMany(t => t.Games).HasForeignKey(t => t.StudioId).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Game>(game => game.HasOne<Studio>().WithMany().HasForeignKey(game => game.StudioId).OnDelete(DeleteBehavior.Cascade));
             modelBuilder.Entity<Game>().HasData(new Game[]
                 {new Game(1,1,1,"Scania Truck Driving Simulator",3,2012,10),
                 new Game(2,1,2,"Bus Driver",3,2007,18),
