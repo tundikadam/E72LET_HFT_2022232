@@ -244,7 +244,7 @@ namespace E72LET_HFT_2022232
             var minSubMenu = new ConsoleMenu(args, level: 1).Add("List", () => List("MinimalSystemRequirements")).Add("Create", () => Create("MinimalSystemRequriements")).Add("Delete", () => Delete("MinimalSystemRequriements")).Add("Update", () => Update("MinimalSystemRequriements")).Add("Read",()=>Read("MinimalSystemRequriements")).Add("Exit",ConsoleMenu.Close);
             var gameSubMenu = new ConsoleMenu(args, level: 1).Add("List", () => List("Game")).Add("Create", () => Create("Game")).Add("Delete", () => Delete("Game")).Add("Update", () => Update("Game")).Add("Read",()=>Read("Game")).Add("Exit",ConsoleMenu.Close);
 
-            var menu = new ConsoleMenu(args, level: 0).Add("Games", () => gameSubMenu.Show()).Add("Studios", () => studioSubMenu.Show()).Add("Minimal System requriements", () => minSubMenu.Show()).Add("Exit",ConsoleMenu.Close);
+            var menu = new ConsoleMenu(args, level: 0).Add("Games", () => gameSubMenu.Show()).Add("Studios", () => studioSubMenu.Show()).Add("Minimal System Requriements", () => minSubMenu.Show()).Add("Exit",ConsoleMenu.Close);
 
             menu.Show();
 
