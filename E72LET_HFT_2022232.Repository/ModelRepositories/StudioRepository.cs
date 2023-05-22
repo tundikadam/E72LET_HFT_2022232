@@ -15,7 +15,7 @@ namespace E72LET_HFT_2022232.Repository
 
         public override Studio Read(int id)
         {
-            return ctx.Studios.FirstOrDefault(t => t.StudioId == id);
+            return ctx.Studios.FirstOrDefault(t=>t.StudioId==id );
         }
 
         public override void Update(Studio item)
