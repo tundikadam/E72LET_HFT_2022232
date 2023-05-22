@@ -99,12 +99,13 @@ namespace E72LET_HFT_2022232
             
          if(entity=="MinimalSystemRequirements")
             {
-                List<MinimalSystemRequirements> games = rest.Get<MinimalSystemRequirements>("MinimalSystemRequirements");
-                foreach (var item in games)
+                List<MinimalSystemRequirements> mins = rest.Get<MinimalSystemRequirements>("MinimalSystemRequirements");
+                foreach (var item in mins)
+                { Console.WriteLine("Id" + item.MinimalSystemRequirementsId + "Operating System"+item.OperatingSystem); }
                     Thread.Sleep(2500);
             }
             
-            Console.ReadLine();
+            
         }
         static void Read(string entity)
         { if (entity == "Game")
@@ -240,7 +241,7 @@ namespace E72LET_HFT_2022232
              rest = new RestService("http://localhost:18902/","game");
 
             var studioSubMenu = new ConsoleMenu(args, level: 1).Add("List", () => List("Studio")).Add("Create", () => Create("Studio")).Add("Delete", () => Delete("Studio")).Add("Update", () => Update("Studio")).Add("Read",()=>Read("Studio")).Add("Exit",ConsoleMenu.Close);
-            var minSubMenu = new ConsoleMenu(args, level: 1).Add("List", () => List("MinimalSystemRequriements")).Add("Create", () => Create("MinimalSystemRequriements")).Add("Delete", () => Delete("MinimalSystemRequriements")).Add("Update", () => Update("MinimalSystemRequriements")).Add("Read",()=>Read("MinimalSystemRequriements")).Add("Exit",ConsoleMenu.Close);
+            var minSubMenu = new ConsoleMenu(args, level: 1).Add("List", () => List("MinimalSystemRequirements")).Add("Create", () => Create("MinimalSystemRequriements")).Add("Delete", () => Delete("MinimalSystemRequriements")).Add("Update", () => Update("MinimalSystemRequriements")).Add("Read",()=>Read("MinimalSystemRequriements")).Add("Exit",ConsoleMenu.Close);
             var gameSubMenu = new ConsoleMenu(args, level: 1).Add("List", () => List("Game")).Add("Create", () => Create("Game")).Add("Delete", () => Delete("Game")).Add("Update", () => Update("Game")).Add("Read",()=>Read("Game")).Add("Exit",ConsoleMenu.Close);
 
             var menu = new ConsoleMenu(args, level: 0).Add("Games", () => gameSubMenu.Show()).Add("Studios", () => studioSubMenu.Show()).Add("Minimal System requriements", () => minSubMenu.Show()).Add("Exit",ConsoleMenu.Close);
