@@ -69,7 +69,7 @@ namespace E72LET_HFT_2022232
                 Console.Write("Enter Studio Name:");
                 string name = Console.ReadLine();
 
-                Studio g = new Studio( rest.Get<Game>("Studio").Last().Id + 1, name);
+                Studio g = new Studio( rest.Get<Studio>("Studio").Last().StudioId + 1, name);
                 try { rest.Post(g, "Studio"); }
                 catch (Exception e)
                 { Console.WriteLine(e.Message); }
