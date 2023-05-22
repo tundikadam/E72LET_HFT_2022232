@@ -56,7 +56,7 @@ namespace E72LET_HFT_2022232
                 string vgabrand = Console.ReadLine();
                 Console.WriteLine("Enter VGA memorySize");
                 int vgamemory = int.Parse(Console.ReadLine());
-                MinimalSystemRequirements min = new MinimalSystemRequirements(rest.Get<MinimalSystemRequirements>("MinimalSystemRequriements").Last().MinimalSystemRequirementsId, Os, ram, ssd, cpubrand, cpuclock, vgabrand, vgamemory);
+                MinimalSystemRequirements min = new MinimalSystemRequirements(rest.Get<MinimalSystemRequirements>("MinimalSystemRequriements").Last().MinimalSystemRequirementsId+1, Os, ram, ssd, cpubrand, cpuclock, vgabrand, vgamemory);
                 try { rest.Post(min, "MinimalSystemRequriements"); }
                 catch (Exception e)
                 { Console.WriteLine(e.Message); }
