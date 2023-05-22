@@ -107,7 +107,31 @@ namespace E72LET_HFT_2022232
             Console.ReadLine();
         }
         static void Read(string entity)
-        { }
+        { if (entity == "Game")
+            { Console.WriteLine("Enter the Game ID");
+               int gameid = int.Parse(Console.ReadLine());
+                try { var item = rest.Get<Game>(gameid, "Game"); }
+                catch(Exception e)
+                { Console.WriteLine(e.Message); }
+                Thread.Sleep(2500);
+            }
+            if (entity == "Studio")
+            { Console.WriteLine("Enter the Studio ID");
+                int studioid = int.Parse(Console.ReadLine());
+                try { var item = rest.Get<Studio>(studioid, "Studio"); }
+                catch(Exception e)
+                { Console.WriteLine(e.Message); }
+                Thread.Sleep(2500);
+            }
+            if(entity== "MinimalSystemRequirements")
+            { Console.WriteLine("Enter MinimalSystemRequirementsID");
+                int minid = int.Parse(Console.ReadLine());
+                try { var item = rest.Get<Studio>(minid, "MinimalSystemRequirements"); }
+                catch(Exception e)
+                { Console.WriteLine(e.Message); }
+                Thread.Sleep(2500);
+            }
+        }
         static void Update(string entity)
         { if (entity == "Game")
             {
@@ -126,11 +150,11 @@ namespace E72LET_HFT_2022232
                 int appearance = int.Parse(Console.ReadLine());
                 Console.WriteLine("Enter the game's price ");
                 int price = int.Parse(Console.ReadLine());
-                var old = rest.Get<Game>(id, "Game");
-                Console.WriteLine("the old game's Id:"+old.Id +"StudioId"+ old.StudioId +"MinimalSystemRequrementsId"+ old.MinimalSystemRequirementsId +"Name"+ old.Name +"Age Limit"+ old.Age_Limit +"Appearance"+ old.Appearance + "Price"+old.Price);
+              //  var old = rest.Get<Game>(id,"Game");
+              //  Console.WriteLine("the old game's Id:"+old.Id +"StudioId"+ old.StudioId +"MinimalSystemRequrementsId"+ old.MinimalSystemRequirementsId +"Name"+ old.Name +"Age Limit"+ old.Age_Limit +"Appearance"+ old.Appearance + "Price"+old.Price);
                 rest.Put<Game>(new Game(id, studioId, minId, name, ageLimit, appearance, price),"Game");
-                var updated = rest.Get<Game>(id, "Game");
-                Console.WriteLine("the new game's Id:" + updated.Id + "StudioId" + updated.StudioId + "MinimalSystemRequrementsId" + updated.MinimalSystemRequirementsId + "Name" + updated.Name + "Age Limit" + updated.Age_Limit + "Appearance" + updated.Appearance + "Price" + updated.Price);
+               // var updated = rest.Get<Game>(id, "Game");
+                //Console.WriteLine("the new game's Id:" + updated.Id + "StudioId" + updated.StudioId + "MinimalSystemRequrementsId" + updated.MinimalSystemRequirementsId + "Name" + updated.Name + "Age Limit" + updated.Age_Limit + "Appearance" + updated.Appearance + "Price" + updated.Price);
                 Thread.Sleep(2500);
             }
         if(entity=="Studio")
