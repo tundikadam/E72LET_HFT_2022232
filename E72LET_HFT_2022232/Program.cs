@@ -18,10 +18,21 @@ namespace E72LET_HFT_2022232
         {
             if (entity == "Game")
             {
-                Console.Write("Enter Game Name:");
-                string name = Console.ReadLine();
                 
-                Game g = new Game(name, rest.Get<Game>("Game").Last().Id + 1);
+                
+                Console.WriteLine("Enter  Studio Id:");
+                int studid = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Minimal Requriements Id:");
+                int minid = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Name:");
+                string name = Console.ReadLine();
+                Console.WriteLine("Enter Age Limit:");
+                int agelimit = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Game Appereance Year:");
+                int appyear = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Game price:");
+                int price = int.Parse(Console.ReadLine());
+                Game g = new Game( rest.Get<Game>("Game").Last().Id + 1,studid,minid,name,agelimit,appyear,price);
                 try { rest.Post(g, "Game"); }
                 catch(Exception e)
                 { Console.WriteLine(e.Message); }
@@ -31,11 +42,22 @@ namespace E72LET_HFT_2022232
             }
             if (entity == "MinimalSystemRequriements")
             {
-                Console.Write("Enter Game Name:");
-                string name = Console.ReadLine();
-
-                Game g = new Game(name, rest.Get<Game>("MinimalSystemRequriements").Last().Id + 1);
-                try { rest.Post(g, "MinimalSystemRequriements"); }
+                Console.WriteLine("Enter Operating System:");
+                string Os = Console.ReadLine();
+                Console.WriteLine("Enter Ram Size");
+                double ram = double.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Ssd Size:");
+                double ssd = double.Parse(Console.ReadLine());
+                Console.WriteLine("Enter CPU Brand ");
+                string cpubrand = Console.ReadLine();
+                Console.WriteLine("Enter CPU clockspeed");
+                double cpuclock = double.Parse(Console.ReadLine());
+                Console.WriteLine("Enter VGA brand");
+                string vgabrand = Console.ReadLine();
+                Console.WriteLine("Enter VGA memorySize");
+                int vgamemory = int.Parse(Console.ReadLine());
+                MinimalSystemRequirements min = new MinimalSystemRequirements(rest.Get<MinimalSystemRequirements>("MinimalSystemRequriements").Last().MinimalSystemRequirementsId, Os, ram, ssd, cpubrand, cpuclock, vgabrand, vgamemory);
+                try { rest.Post(min, "MinimalSystemRequriements"); }
                 catch (Exception e)
                 { Console.WriteLine(e.Message); }
                 Thread.Sleep(2500);
