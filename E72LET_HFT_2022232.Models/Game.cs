@@ -17,6 +17,12 @@ namespace E72LET_HFT_2022232.Models
             Appearance = appearance;
             Price = price;
         }
+        public Game()
+        {  }
+        public Game(string name,int id)
+        { Name = name;
+            Id = id;
+        }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

@@ -24,7 +24,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E72LET_HFT_2022232.Endpoint", "E72LET_2022232.Endpoint\E72LET_HFT_2022232.Endpoint.csproj", "{13DD9B51-9043-4305-97A7-9E77C97C991B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E72LET_HFT_2022232.Endpoint", "E72LET_2022232.Endpoint\E72LET_HFT_2022232.Endpoint.csproj", "{13DD9B51-9043-4305-97A7-9E77C97C991B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
