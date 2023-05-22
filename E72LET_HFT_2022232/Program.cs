@@ -97,7 +97,7 @@ namespace E72LET_HFT_2022232
                 Thread.Sleep(2500);
             }
             
-         if(entity=="MinimalSystemRequirements")
+         if(entity== "MinimalSystemRequirements")
             {
                 List<MinimalSystemRequirements> mins = rest.Get<MinimalSystemRequirements>("MinimalSystemRequirements");
                 foreach (var item in mins)
