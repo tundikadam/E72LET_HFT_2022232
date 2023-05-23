@@ -28,15 +28,16 @@ namespace E72LET_HFT_2022232.Logic
 
         public void Delete(int id)
         {
-            repo.Delete(id);
+            this.repo.Delete(id);
         }
 
         public Studio Read(int id)
         {
-            var studio = this.repo.Read(id);
-            if (studio == null)
-            { throw new ArgumentException("Studio not exists"); }
-            return studio;
+            if (repo.ReadAll().Last().StudioId >= id)
+            {
+                return this.repo.Read(id);
+            }
+            else { throw new ArgumentException("Item not found"); }
         }
 
         public IQueryable<Studio> ReadAll()
@@ -46,7 +47,7 @@ namespace E72LET_HFT_2022232.Logic
 
         public void Update(Studio item)
         {
-            repo.Update(item);
+            this.repo.Update(item);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using E72LET_HFT_2022232.Models;
 using E72LET_HFT_2022232.Repository;
 using System;
+using System.ComponentModel.Design;
 using System.Linq;
 
 namespace E72LET_HFT_2022232.Logic
@@ -33,10 +34,9 @@ namespace E72LET_HFT_2022232.Logic
 
         public Game Read(int id)
         {
-            var game = this.repo.Read(id);
-            if (game == null)
-            { throw new ArgumentException("Game not exists"); }
-            return game;
+           if(repo.ReadAll().Last().Id>=id)
+            { return this.repo.Read(id); }
+            else { throw new ArgumentException("Item not exist"); }
         }
 
         public IQueryable<Game> ReadAll()

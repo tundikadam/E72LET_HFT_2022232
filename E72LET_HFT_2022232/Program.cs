@@ -40,7 +40,7 @@ namespace E72LET_HFT_2022232
                 
               
             }
-            if (entity == "MinimalSystemRequriements")
+            if (entity=="Minimal")
             {
                 Console.WriteLine("Enter Operating System:");
                 string Os = Console.ReadLine();
@@ -97,12 +97,15 @@ namespace E72LET_HFT_2022232
                 Thread.Sleep(2500);
             }
             
-         if(entity== "MinimalSystemRequirements")
+         if(entity=="Minimal")
             {
-                List<MinimalSystemRequirements> mins = rest.Get<MinimalSystemRequirements>("MinimalSystemRequirements");
+               
+                
+                List<MinimalSystemRequirements> mins = rest.Get<MinimalSystemRequirements>("MinimalSystemRequriements");
                 foreach (var item in mins)
-                { Console.WriteLine("Id" + item.MinimalSystemRequirementsId + "Operating System"+item.OperatingSystem); }
+                { Console.WriteLine("Id: " + item.MinimalSystemRequirementsId + "Operating System: "+item.OperatingSystem); }
                     Thread.Sleep(2500);
+                
             }
             
             
@@ -113,6 +116,7 @@ namespace E72LET_HFT_2022232
                int gameid = int.Parse(Console.ReadLine());
                 try { var item = rest.Get<Game>(gameid, "Game");
                     Console.WriteLine("This Game ID:" + item.Id + "StudioId" + item.StudioId + "Minimal System RequriementsId:" + item.MinimalSystemRequirementsId + "Name" + item.Name + "AgeLimit" + item.Age_Limit + "Appearance" + item.Appearance + "Price" + item.Price);
+                    Thread.Sleep(2500);
                 }
                 catch(Exception e)
                 { Console.WriteLine(e.Message); }
@@ -123,16 +127,18 @@ namespace E72LET_HFT_2022232
                 int studioid = int.Parse(Console.ReadLine());
                 try { var item = rest.Get<Studio>(studioid, "Studio");
                     Console.WriteLine("This Studio ID:" + item.StudioId+"Name"+item.StudioName);
+                    Thread.Sleep(2500);
                 }
                 catch(Exception e)
                 { Console.WriteLine(e.Message); }
                 Thread.Sleep(2500);
             }
-            if(entity== "MinimalSystemRequirements")
+            if(entity=="Minimal")
             { Console.WriteLine("Enter MinimalSystemRequirementsID");
                 int minid = int.Parse(Console.ReadLine());
-                try { var item = rest.Get<MinimalSystemRequirements>(minid, "MinimalSystemRequirements");
-                    Console.WriteLine("This Minimal System RequirementsID:" + item.MinimalSystemRequirementsId + "Operating System" + item.OperatingSystem + "Ram Size" + item.RAM_size + "SSD SPACe" + item.SSD_space + "CPU Brand" + item.CPU_Brand + "CPU CLOCK SPEED" + item.CPU_ClockSpeed + "VGA BRAND" + item.VGA_Brand + "VGA Memory Size" + item.VGA_MemorySize);
+                try { var item = rest.Get<MinimalSystemRequirements>(minid,"MinimalSystemRequirements");
+                    Console.WriteLine("This Minimal System Requirements ID: " + item.MinimalSystemRequirementsId + "Operating System: " + item.OperatingSystem + "Ram Size" + item.RAM_size + "SSD SPACe" + item.SSD_space + "CPU Brand" + item.CPU_Brand + "CPU CLOCK SPEED" + item.CPU_ClockSpeed + "VGA BRAND" + item.VGA_Brand + "VGA Memory Size" + item.VGA_MemorySize);
+                    Thread.Sleep(2500);
                 }
                 catch(Exception e)
                 { Console.WriteLine(e.Message); }
@@ -176,7 +182,7 @@ namespace E72LET_HFT_2022232
                // Console.WriteLine("the updated studio's id:" + updated.StudioId + "name:" + updated.StudioName);
                 Thread.Sleep(2500);
             }
-        if(entity=="MinimalSystemRequirements")
+        if(entity=="Minimal")
             { Console.WriteLine("Enter the Requirements id");
                 int Id = int.Parse(Console.ReadLine());
                 Console.WriteLine("Enter the Operation System's name");
@@ -213,7 +219,7 @@ namespace E72LET_HFT_2022232
                     Thread.Sleep(2500);
                 }
             }
-            if (entity == "MinimalSystemRequirements")
+            if (entity == "Minimal")
             {
                 Console.WriteLine("ID:");
                 int id = int.Parse(Console.ReadLine());
@@ -270,7 +276,7 @@ namespace E72LET_HFT_2022232
              rest = new RestService("http://localhost:18902/","game");
 
             var studioSubMenu = new ConsoleMenu(args, level: 1).Add("List", () => List("Studio")).Add("Create", () => Create("Studio")).Add("Delete", () => Delete("Studio")).Add("Update", () => Update("Studio")).Add("Read",()=>Read("Studio")).Add("Exit",ConsoleMenu.Close);
-            var minSubMenu = new ConsoleMenu(args, level: 1).Add("List", () => List("MinimalSystemRequirements")).Add("Create", () => Create("MinimalSystemRequriements")).Add("Delete", () => Delete("MinimalSystemRequriements")).Add("Update", () => Update("MinimalSystemRequriements")).Add("Read",()=>Read("MinimalSystemRequriements")).Add("Exit",ConsoleMenu.Close);
+            var minSubMenu = new ConsoleMenu(args, level: 1).Add("List", () => List("Minimal")).Add("Create", () => Create("Minimal")).Add("Delete", () => Delete("Minimal")).Add("Update", () => Update("Minimal")).Add("Read",()=>Read("Minimal")).Add("Exit",ConsoleMenu.Close);
             var gameSubMenu = new ConsoleMenu(args, level: 1).Add("List", () => List("Game")).Add("Create", () => Create("Game")).Add("Delete", () => Delete("Game")).Add("Update", () => Update("Game")).Add("Read",()=>Read("Game")).Add("ActivisionsGamePriceAverage",()=>ActivisionsGamePriceAverage()).Add("ContendoCount",()=>ContendoCount()).Add("CountOfWin98",()=>CountOfWin98()).Add("NewestGame",()=>NewestGame()).Add("FirstRockstar",()=>FirstRockstar()).Add("Exit",ConsoleMenu.Close);
 
             var menu = new ConsoleMenu(args, level: 0).Add("Games", () => gameSubMenu.Show()).Add("Studios", () => studioSubMenu.Show()).Add("Minimal System Requriements", () => minSubMenu.Show()).Add("Exit",ConsoleMenu.Close);

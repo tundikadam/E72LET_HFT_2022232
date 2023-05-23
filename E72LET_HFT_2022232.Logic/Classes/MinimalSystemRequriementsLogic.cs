@@ -26,16 +26,17 @@ namespace E72LET_HFT_2022232.Logic
         }
 
         public void Delete(int id)
-        {
-            repo.Delete(id);
+        {     this.repo.Delete(id); 
+            
         }
 
         public MinimalSystemRequirements Read(int id)
         {
-            var minimal = this.repo.Read(id);
-            if (minimal == null)
-            { throw new ArgumentException("This system requriement not exists"); }
-            return minimal;
+            if(repo.ReadAll().Last().MinimalSystemRequirementsId>=id)
+            { return this.repo.Read(id); }
+            else { throw new ArgumentException("Item not exist"); }
+           
+           
         }
 
         public IQueryable<MinimalSystemRequirements> ReadAll()
@@ -45,7 +46,7 @@ namespace E72LET_HFT_2022232.Logic
 
         public void Update(MinimalSystemRequirements item)
         {
-            repo.Update(item);
+            this.repo.Update(item);
         }
     }
 }
