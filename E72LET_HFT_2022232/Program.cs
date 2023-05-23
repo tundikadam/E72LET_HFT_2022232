@@ -262,7 +262,7 @@ namespace E72LET_HFT_2022232
             Thread.Sleep(2500);
         }
         static void FirstRockstar()
-        { Console.WriteLine("The oldest Rockstar's Game: "+rest.GetSingle<int>("Stat/FirstRockstar"));
+        { Console.WriteLine("The oldest Rockstar's Game Appereance Year: "+rest.GetSingle<int>("Stat/FirstRockstar"));
             Thread.Sleep(2500);
         }
         static void Main(string[] args)
