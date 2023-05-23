@@ -245,16 +245,26 @@ namespace E72LET_HFT_2022232
       
        
         static void ActivisionsGamePriceAverage()
-        { Console.WriteLine("Activisions game price average: "+rest.GetSingle<double>("Game")); }
+        { Console.WriteLine("Activisions game price average: "+rest.GetSingle<double>("Stat/ActivisionsGamePriceAverage"));
+            Thread.Sleep(2500);
+        }
         static void ContendoCount()
-        { Console.WriteLine("Contendo's game count: "+rest.GetSingle<int>("Game")); }
+        { Console.WriteLine("Contendo's game count: "+rest.GetSingle<int>("Stat/ContendoCount"));
+            Thread.Sleep(2500);
+        }
 
         static void CountOfWin98()
-        { Console.WriteLine("Count of Windows 98 Games: "+rest.GetSingle<int>("Game")); }
+        { Console.WriteLine("Count of Windows 98 Games: "+rest.GetSingle<int>("Stat/CountOfWin98"));
+            Thread.Sleep(2500);
+        }
         static void NewestGame()
-        { Console.WriteLine("The Newest Game's Studio Name:"+rest.GetSingle<string>("Game")); }
+        { Console.WriteLine("The Newest Game's Studio Name:"+rest.GetSingle<string>("Stat/NewestGame"));
+            Thread.Sleep(2500);
+        }
         static void FirstRockstar()
-        { Console.WriteLine("The oldest Rockstar's Game: "+rest.GetSingle<int>("Game")); }
+        { Console.WriteLine("The oldest Rockstar's Game: "+rest.GetSingle<int>("Stat/FirstRockstar"));
+            Thread.Sleep(2500);
+        }
         static void Main(string[] args)
         {
              rest = new RestService("http://localhost:18902/","game");

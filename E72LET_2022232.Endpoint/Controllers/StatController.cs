@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace E72LET_HFT_2022232.Endpoint.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("[controller]/[action]")]
     [ApiController]
     public class StatController : ControllerBase
     {
