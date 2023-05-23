@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace E72LET_2022232.Endpoint.Controllers
 {
-    [Route("/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class GameController : ControllerBase
     {
