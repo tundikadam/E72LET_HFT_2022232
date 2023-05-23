@@ -273,7 +273,7 @@ namespace E72LET_HFT_2022232
         }
         static void Main(string[] args)
         {
-             rest = new RestService("http://localhost:18902/","game");
+             rest = new RestService("http://localhost:18902/", "swagger");
 
             var studioSubMenu = new ConsoleMenu(args, level: 1).Add("List", () => List("Studio")).Add("Create", () => Create("Studio")).Add("Delete", () => Delete("Studio")).Add("Update", () => Update("Studio")).Add("Read",()=>Read("Studio")).Add("Exit",ConsoleMenu.Close);
             var minSubMenu = new ConsoleMenu(args, level: 1).Add("List", () => List("Minimal")).Add("Create", () => Create("Minimal")).Add("Delete", () => Delete("Minimal")).Add("Update", () => Update("Minimal")).Add("Read",()=>Read("Minimal")).Add("Exit",ConsoleMenu.Close);
