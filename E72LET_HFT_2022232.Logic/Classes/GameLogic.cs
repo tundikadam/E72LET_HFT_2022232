@@ -59,7 +59,7 @@ namespace E72LET_HFT_2022232.Logic
         public int? CountOfWin98()
         { return this.repo.ReadAll().Where(t => minrep.Read(t.MinimalSystemRequirementsId).OperatingSystem== "Windows 98").Count(); }
 
-        //Legújabb játék neve
+        //Legújabb játék kiadója
         public string NewestGame()
         { return this.repo.ReadAll().OrderByDescending(t => t.Appearance).Select(t => studrep.Read(t.StudioId).StudioName).First();  }
         //Mikor jelent meg az első, Rockstar Games által kiadott játék
