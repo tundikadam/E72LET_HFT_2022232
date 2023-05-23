@@ -236,13 +236,32 @@ namespace E72LET_HFT_2022232
                 }
             }
         }
+        
+
+       
+       
+        
+
+      
+       
+        static void ActivisionsGamePriceAverage()
+        { Console.WriteLine("Activisions game price average: "+rest.GetSingle<double>("Game")); }
+        static void ContendoCount()
+        { Console.WriteLine("Contendo's game count: "+rest.GetSingle<int>("Game")); }
+
+        static void CountOfWin98()
+        { Console.WriteLine("Count of Windows 98 Games: "+rest.GetSingle<int>("Game")); }
+        static void NewestGame()
+        { Console.WriteLine("The Newest Game's Studio Name:"+rest.GetSingle<string>("Game")); }
+        static void FirstRockstar()
+        { Console.WriteLine("The oldest Rockstar's Game: "+rest.GetSingle<int>("Game")); }
         static void Main(string[] args)
         {
              rest = new RestService("http://localhost:18902/","game");
 
             var studioSubMenu = new ConsoleMenu(args, level: 1).Add("List", () => List("Studio")).Add("Create", () => Create("Studio")).Add("Delete", () => Delete("Studio")).Add("Update", () => Update("Studio")).Add("Read",()=>Read("Studio")).Add("Exit",ConsoleMenu.Close);
             var minSubMenu = new ConsoleMenu(args, level: 1).Add("List", () => List("MinimalSystemRequirements")).Add("Create", () => Create("MinimalSystemRequriements")).Add("Delete", () => Delete("MinimalSystemRequriements")).Add("Update", () => Update("MinimalSystemRequriements")).Add("Read",()=>Read("MinimalSystemRequriements")).Add("Exit",ConsoleMenu.Close);
-            var gameSubMenu = new ConsoleMenu(args, level: 1).Add("List", () => List("Game")).Add("Create", () => Create("Game")).Add("Delete", () => Delete("Game")).Add("Update", () => Update("Game")).Add("Read",()=>Read("Game")).Add("Exit",ConsoleMenu.Close);
+            var gameSubMenu = new ConsoleMenu(args, level: 1).Add("List", () => List("Game")).Add("Create", () => Create("Game")).Add("Delete", () => Delete("Game")).Add("Update", () => Update("Game")).Add("Read",()=>Read("Game")).Add("ActivisionsGamePriceAverage",()=>ActivisionsGamePriceAverage()).Add("ContendoCount",()=>ContendoCount()).Add("CountOfWin98",()=>CountOfWin98()).Add("NewestGame",()=>NewestGame()).Add("FirstRockstar",()=>FirstRockstar()).Add("Exit",ConsoleMenu.Close);
 
             var menu = new ConsoleMenu(args, level: 0).Add("Games", () => gameSubMenu.Show()).Add("Studios", () => studioSubMenu.Show()).Add("Minimal System Requriements", () => minSubMenu.Show()).Add("Exit",ConsoleMenu.Close);
 
