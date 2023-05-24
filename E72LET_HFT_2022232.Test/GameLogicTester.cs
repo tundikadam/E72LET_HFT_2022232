@@ -162,6 +162,8 @@ namespace E72LET_HFT_2022232.Test
         [Test]
         public void MinimalSystemRequrimentsReadInvalidTest()
         { Assert.That(() => minlogic.Read(78), Throws.TypeOf<ArgumentException>()); }
+        
+      
 
         //Non Crud Tests
 
