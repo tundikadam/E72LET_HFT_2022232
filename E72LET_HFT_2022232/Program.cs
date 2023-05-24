@@ -114,6 +114,7 @@ namespace E72LET_HFT_2022232
             { Console.WriteLine("Enter the Game ID");
                int gameid = int.Parse(Console.ReadLine());
                 try { var item = rest.Get<Game>(gameid, "Game");
+                    
                     Console.WriteLine("This Game ID:" + item.Id + "StudioId" + item.StudioId + "Minimal System RequriementsId:" + item.MinimalSystemRequirementsId + "Name" + item.Name + "AgeLimit" + item.Age_Limit + "Appearance" + item.Appearance + "Price" + item.Price);
                     Thread.Sleep(2500);
                 }
@@ -216,18 +217,18 @@ namespace E72LET_HFT_2022232
                 double cpuclock = double.Parse(Console.ReadLine());
                 Console.WriteLine("Enter the Vga brand ");
                 string vgabrand = Console.ReadLine();
-                Console.WriteLine("Enter the VGA1s clockspeed");
+                Console.WriteLine("Enter the VGA1s memory size");
                 int vgamemorysize = int.Parse(Console.ReadLine());
                 try {
-                    var old = rest.Get<MinimalSystemRequirements>(Id, "MinimalSystemRequirements");
+                    var old = rest.Get<MinimalSystemRequirements>(Id, "MinimalSystemRequriements");
                     Console.WriteLine("Old requirement's Id" + old.MinimalSystemRequirementsId + "Operating System" + old.OperatingSystem + "Ram size" + old.RAM_size + "Cpu brand" + old.CPU_Brand + "Cpu clockspeed" + old.CPU_ClockSpeed + "VgaBrand" + old.VGA_Brand + "VgaMemorySize" + old.VGA_MemorySize);
                 }catch(Exception e)
                 { Console.WriteLine(e.Message); }
-                try { rest.Put<MinimalSystemRequirements>(new MinimalSystemRequirements(Id, Os, ram, space, brand, cpuclock, vgabrand, vgamemorysize), "MinimalSystemRequirements"); }
-                catch(Exception e)
+                try { rest.Put<MinimalSystemRequirements>(new MinimalSystemRequirements(Id, Os, ram, space, brand, cpuclock, vgabrand, vgamemorysize), "MinimalSystemRequriements"); }
+                catch (Exception e)
                 { Console.WriteLine(e.Message); }
                 try {
-                    var updated = rest.Get<MinimalSystemRequirements>(Id, "MinimalSystemRequirements");
+                    var updated = rest.Get<MinimalSystemRequirements>(Id, "MinimalSystemRequriements");
                     Console.WriteLine("New requirement's Id" + updated.MinimalSystemRequirementsId + "Operating System" + updated.OperatingSystem + "Ram size" + updated.RAM_size + "Cpu brand" + updated.CPU_Brand + "Cpu clockspeed" + updated.CPU_ClockSpeed + "VgaBrand" + updated.VGA_Brand + "VgaMemorySize" + updated.VGA_MemorySize);
                 }catch(Exception e)
                 { Console.WriteLine(e.Message); }

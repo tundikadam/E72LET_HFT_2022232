@@ -1,4 +1,5 @@
 ﻿using E72LET_HFT_2022232.Models;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -22,8 +23,14 @@ namespace E72LET_HFT_2022232.Repository
         public override void Update(Game item)
         {
             var old = Read(item.Id);
-            foreach (var prop in old.GetType().GetProperties())
-            { prop.SetValue(old, prop.GetValue(item)); }
+            old.Age_Limit = item.Age_Limit;
+            old.Price = item.Price;
+            old.StudioId = item.StudioId;
+            old.Name = item.Name;
+            old.MinimalSystemRequirementsId = item.MinimalSystemRequirementsId;
+            old.Id = item.Id;
+            old.Appearance = item.Appearance;
+            
             ctx.SaveChanges();
         }
     }

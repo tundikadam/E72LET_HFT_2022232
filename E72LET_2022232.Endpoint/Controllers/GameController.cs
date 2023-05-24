@@ -31,9 +31,14 @@ namespace E72LET_2022232.Endpoint.Controllers
         public Game Get(int id)
         {
             try { Game result = logic.Read(id);
+                
                 return result; }
             catch(Exception ex)
-            { return null; }
+            {
+                
+                return null;
+                
+            }
         }
 
         // POST api/<GameController>

@@ -21,8 +21,8 @@ namespace E72LET_HFT_2022232.Repository
         public override void Update(Studio item)
         {
             var old = Read(item.StudioId);
-            foreach (var prop in old.GetType().GetProperties())
-            { prop.SetValue(old, prop.GetValue(item)); }
+            old.StudioId = item.StudioId;
+            old.StudioName = item.StudioName;
             ctx.SaveChanges();
         }
     }

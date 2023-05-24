@@ -35,8 +35,11 @@ namespace E72LET_HFT_2022232.Logic
         public Game Read(int id)
         {
             var game = this.repo.Read(id);
+            
             if(game==null)
-            { throw new ArgumentException("This game doesn't exist it"); }
+            {
+                
+                throw new ArgumentException("This game doesn't exist it"); }
             return game;
         }
 
