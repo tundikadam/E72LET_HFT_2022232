@@ -162,11 +162,21 @@ namespace E72LET_HFT_2022232
                 int appearance = int.Parse(Console.ReadLine());
                 Console.WriteLine("Enter the game's price ");
                 int price = int.Parse(Console.ReadLine());
-              //  var old = rest.Get<Game>(id,"Game");
-              //  Console.WriteLine("the old game's Id:"+old.Id +"StudioId"+ old.StudioId +"MinimalSystemRequrementsId"+ old.MinimalSystemRequirementsId +"Name"+ old.Name +"Age Limit"+ old.Age_Limit +"Appearance"+ old.Appearance + "Price"+old.Price);
-                rest.Put<Game>(new Game(id, studioId, minId, name, ageLimit, appearance, price),"Game");
-               // var updated = rest.Get<Game>(id, "Game");
-                //Console.WriteLine("the new game's Id:" + updated.Id + "StudioId" + updated.StudioId + "MinimalSystemRequrementsId" + updated.MinimalSystemRequirementsId + "Name" + updated.Name + "Age Limit" + updated.Age_Limit + "Appearance" + updated.Appearance + "Price" + updated.Price);
+                
+                try { var old = rest.Get<Game>(id, "Game");
+                    Console.WriteLine("the old game's Id:" + old.Id + "StudioId" + old.StudioId + "MinimalSystemRequrementsId" + old.MinimalSystemRequirementsId + "Name" + old.Name + "Age Limit" + old.Age_Limit + "Appearance" + old.Appearance + "Price" + old.Price);
+                }
+                catch(Exception e)
+                { Console.WriteLine(e.Message); }
+                try { rest.Put<Game>(new Game(id, studioId, minId, name, ageLimit, appearance, price), "Game"); }
+                catch (Exception e)
+                { Console.WriteLine(e.Message); }
+                try {
+                    var updated = rest.Get<Game>(id, "Game");
+                    Console.WriteLine("the new game's Id:" + updated.Id + "StudioId" + updated.StudioId + "MinimalSystemRequrementsId" + updated.MinimalSystemRequirementsId + "Name" + updated.Name + "Age Limit" + updated.Age_Limit + "Appearance" + updated.Appearance + "Price" + updated.Price);
+                }catch(Exception e)
+                { Console.WriteLine(e.Message); }
+               
                 Thread.Sleep(2500);
             }
         if(entity=="Studio")
@@ -174,11 +184,21 @@ namespace E72LET_HFT_2022232
                 int id = int.Parse(Console.ReadLine());
                 Console.WriteLine("Enter the Studio name");
                 string name = Console.ReadLine();
-            //    var old = rest.Get<Studio>(id,"Studio");
-                //Console.WriteLine("the old studio's id:" + old.StudioId + "name:" + old.StudioName);
-                rest.Put<Studio>(new Studio(id, name), "Studio");
-              //  var updated = rest.Get<Studio>(id, "Studio");
-               // Console.WriteLine("the updated studio's id:" + updated.StudioId + "name:" + updated.StudioName);
+                try
+                {
+                    var old = rest.Get<Studio>(id, "Studio");
+                    Console.WriteLine("the old studio's id:" + old.StudioId + "name:" + old.StudioName);
+                }catch(Exception e)
+                { Console.WriteLine(e.Message); }
+                try { rest.Put<Studio>(new Studio(id, name), "Studio"); }
+                catch(Exception e)
+                { Console.WriteLine(e.Message); }
+                try {
+                    var updated = rest.Get<Studio>(id, "Studio");
+                    Console.WriteLine("the updated studio's id:" + updated.StudioId + "name:" + updated.StudioName);
+                }catch(Exception e)
+                { Console.WriteLine(e.Message); }
+                
                 Thread.Sleep(2500);
             }
         if(entity=="Minimal")
@@ -198,11 +218,20 @@ namespace E72LET_HFT_2022232
                 string vgabrand = Console.ReadLine();
                 Console.WriteLine("Enter the VGA1s clockspeed");
                 int vgamemorysize = int.Parse(Console.ReadLine());
-             //   var old = rest.Get<MinimalSystemRequirements>(Id, "MinimalSystemRequirements");
-             //   Console.WriteLine("Old requirement's Id" + old.MinimalSystemRequirementsId + "Operating System" + old.OperatingSystem + "Ram size" + old.RAM_size + "Cpu brand" + old.CPU_Brand + "Cpu clockspeed" + old.CPU_ClockSpeed + "VgaBrand" + old.VGA_Brand + "VgaMemorySize" + old.VGA_MemorySize);
-                rest.Put<MinimalSystemRequirements>(new MinimalSystemRequirements(Id,Os,ram,space,brand,cpuclock,vgabrand,vgamemorysize), "MinimalSystemRequirements");
-              //  var updated= rest.Get<MinimalSystemRequirements>(Id, "MinimalSystemRequirements");
-               // Console.WriteLine("New requirement's Id" + updated.MinimalSystemRequirementsId + "Operating System" + updated.OperatingSystem + "Ram size" + updated.RAM_size + "Cpu brand" + updated.CPU_Brand + "Cpu clockspeed" + updated.CPU_ClockSpeed + "VgaBrand" + updated.VGA_Brand + "VgaMemorySize" + updated.VGA_MemorySize);
+                try {
+                    var old = rest.Get<MinimalSystemRequirements>(Id, "MinimalSystemRequirements");
+                    Console.WriteLine("Old requirement's Id" + old.MinimalSystemRequirementsId + "Operating System" + old.OperatingSystem + "Ram size" + old.RAM_size + "Cpu brand" + old.CPU_Brand + "Cpu clockspeed" + old.CPU_ClockSpeed + "VgaBrand" + old.VGA_Brand + "VgaMemorySize" + old.VGA_MemorySize);
+                }catch(Exception e)
+                { Console.WriteLine(e.Message); }
+                try { rest.Put<MinimalSystemRequirements>(new MinimalSystemRequirements(Id, Os, ram, space, brand, cpuclock, vgabrand, vgamemorysize), "MinimalSystemRequirements"); }
+                catch(Exception e)
+                { Console.WriteLine(e.Message); }
+                try {
+                    var updated = rest.Get<MinimalSystemRequirements>(Id, "MinimalSystemRequirements");
+                    Console.WriteLine("New requirement's Id" + updated.MinimalSystemRequirementsId + "Operating System" + updated.OperatingSystem + "Ram size" + updated.RAM_size + "Cpu brand" + updated.CPU_Brand + "Cpu clockspeed" + updated.CPU_ClockSpeed + "VgaBrand" + updated.VGA_Brand + "VgaMemorySize" + updated.VGA_MemorySize);
+                }catch(Exception e)
+                { Console.WriteLine(e.Message); }
+                
                 Thread.Sleep(2500);
             }
        
