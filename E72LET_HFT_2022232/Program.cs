@@ -103,7 +103,7 @@ namespace E72LET_HFT_2022232
                 
                 List<MinimalSystemRequirements> mins = rest.Get<MinimalSystemRequirements>("MinimalSystemRequriements");
                 foreach (var item in mins)
-                { Console.WriteLine("Id: " + item.MinimalSystemRequirementsId + "Operating System: "+item.OperatingSystem); }
+                { Console.WriteLine("Id: " + item.MinimalSystemRequirementsId + " Operating System: "+item.OperatingSystem); }
                     Thread.Sleep(2500);
                 
             }
@@ -136,7 +136,7 @@ namespace E72LET_HFT_2022232
             if(entity=="Minimal")
             { Console.WriteLine("Enter MinimalSystemRequirementsID");
                 int minid = int.Parse(Console.ReadLine());
-                try { var item = rest.Get<MinimalSystemRequirements>(minid,"MinimalSystemRequirements");
+                try { var item = rest.Get<MinimalSystemRequirements>(minid, "MinimalSystemRequriements");
                     Console.WriteLine("This Minimal System Requirements ID: " + item.MinimalSystemRequirementsId + "Operating System: " + item.OperatingSystem + "Ram Size" + item.RAM_size + "SSD SPACe" + item.SSD_space + "CPU Brand" + item.CPU_Brand + "CPU CLOCK SPEED" + item.CPU_ClockSpeed + "VGA BRAND" + item.VGA_Brand + "VGA Memory Size" + item.VGA_MemorySize);
                     Thread.Sleep(2500);
                 }
@@ -223,7 +223,7 @@ namespace E72LET_HFT_2022232
             {
                 Console.WriteLine("ID:");
                 int id = int.Parse(Console.ReadLine());
-                try { rest.Delete(id, "MinimalSystemRequirements"); }
+                try { rest.Delete(id, "MinimalSystemRequriements"); }
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);

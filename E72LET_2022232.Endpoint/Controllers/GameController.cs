@@ -1,6 +1,7 @@
 ﻿using E72LET_HFT_2022232.Logic;
 using E72LET_HFT_2022232.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -27,9 +28,12 @@ namespace E72LET_2022232.Endpoint.Controllers
 
         // GET api/<GameController>/5
         [HttpGet("{id}")]
-        public Game Read(int id)
+        public Game Get(int id)
         {
-            return this.logic.Read(id);
+            try { Game result = logic.Read(id);
+                return result; }
+            catch(Exception ex)
+            { return null; }
         }
 
         // POST api/<GameController>
