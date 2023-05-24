@@ -2,7 +2,6 @@
 
 using E72LET_HFT_2022232.Models;
 
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -273,6 +272,25 @@ namespace E72LET_HFT_2022232
         }
         static void Main(string[] args)
         {
+            //GameDbContext ctx = new GameDbContext();
+            //IRepository<Game> grepo = new GameRepository(ctx);
+            //IRepository<Studio> srepo = new StudioRepository(ctx);
+            //IRepository<MinimalSystemRequirements> mrepo = new MinimalSystemRequiresRepository(ctx);
+            //var glogic = new GameLogic(grepo,srepo,mrepo);
+            //var studiologic = new StudioLogic(srepo);
+            //var minlogic = new MinimalSystemRequriementsLogic(mrepo);
+            //Game logicresult = glogic.Read(1);
+            //Studio logicstudio = studiologic.Read(1);
+            //MinimalSystemRequirements logicmin = minlogic.Read(1);
+
+           // Game result = grepo.Read(1);
+            //Studio studio = srepo.Read(1);
+            //MinimalSystemRequirements min = mrepo.Read(1);
+            //var games = ctx.Games.ToArray();
+            //var mins = ctx.MinimalSystemRequirements.ToArray();
+            //var studios = ctx.Studios.ToArray();
+
+            
              rest = new RestService("http://localhost:18902/", "swagger");
 
             var studioSubMenu = new ConsoleMenu(args, level: 1).Add("List", () => List("Studio")).Add("Create", () => Create("Studio")).Add("Delete", () => Delete("Studio")).Add("Update", () => Update("Studio")).Add("Read",()=>Read("Studio")).Add("Exit",ConsoleMenu.Close);
