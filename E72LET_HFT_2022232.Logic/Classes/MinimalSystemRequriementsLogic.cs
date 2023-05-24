@@ -32,9 +32,10 @@ namespace E72LET_HFT_2022232.Logic
 
         public MinimalSystemRequirements Read(int id)
         {
-            if(repo.ReadAll().Last().MinimalSystemRequirementsId>=id)
-            { return this.repo.Read(id); }
-            else { throw new ArgumentException("Item not exist"); }
+            var min = this.repo.Read(id);
+            if(min==null)
+            { throw new ArgumentException("This Requriements doesn't exist in this Database"); }
+            return min;
            
            
         }

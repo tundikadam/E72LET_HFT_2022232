@@ -1,4 +1,5 @@
-﻿using E72LET_HFT_2022232.Models;
+﻿using Castle.DynamicProxy.Generators.Emitters;
+using E72LET_HFT_2022232.Models;
 using E72LET_HFT_2022232.Repository;
 using System;
 using System.Collections.Generic;
@@ -33,11 +34,10 @@ namespace E72LET_HFT_2022232.Logic
 
         public Studio Read(int id)
         {
-            if (repo.ReadAll().Last().StudioId >= id)
-            {
-                return this.repo.Read(id);
-            }
-            else { throw new ArgumentException("Item not found"); }
+            var studio = this.repo.Read(id);
+            if(studio==null)
+            { throw new ArgumentException("This studio dowsn't exist"); }
+            return studio;
         }
 
         public IQueryable<Studio> ReadAll()

@@ -34,9 +34,10 @@ namespace E72LET_HFT_2022232.Logic
 
         public Game Read(int id)
         {
-           if(repo.ReadAll().Last().Id>=id)
-            { return this.repo.Read(id); }
-            else { throw new ArgumentException("Item not exist"); }
+            var game = this.repo.Read(id);
+            if(game==null)
+            { throw new ArgumentException("This game doesn't exist it"); }
+            return game;
         }
 
         public IQueryable<Game> ReadAll()
