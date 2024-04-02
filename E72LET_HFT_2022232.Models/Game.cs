@@ -17,7 +17,8 @@ namespace E72LET_HFT_2022232.Models
             Appearance = appearance;
             Price = price;
         }
-        
+        public Game()
+        { }
       
 
         [Key]
