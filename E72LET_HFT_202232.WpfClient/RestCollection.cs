@@ -351,6 +351,7 @@ namespace E72LET_HFT_202232.WpfClient
             if (hasSignalR)
             {
                 this.rest.PostAsync(item, typeof(T).Name);
+                ;
             }
             else
             {

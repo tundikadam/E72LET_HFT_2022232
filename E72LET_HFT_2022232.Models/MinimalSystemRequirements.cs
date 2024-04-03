@@ -11,6 +11,7 @@ namespace E72LET_HFT_2022232.Models
 {
     public class MinimalSystemRequirements
     {
+        public MinimalSystemRequirements() { }
         public MinimalSystemRequirements(int minimalSystemRequirementsId, string operatingSystem, double rAM_size, double sSD_space, string cPU_Brand, double cPU_ClockSpeed, string vGA_Brand, int vGA_MemorySize)
         {
             MinimalSystemRequirementsId = minimalSystemRequirementsId;

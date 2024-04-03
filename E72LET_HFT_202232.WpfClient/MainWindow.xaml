@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Game Editor" Height="621" Width="833">
     <Window.DataContext>
-        <local:MainWindowViewModel />
+        <local:GameWindowViewModel></local:GameWindowViewModel>
     </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
