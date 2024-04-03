@@ -39,7 +39,12 @@ namespace E72LET_HFT_202232.WpfClient
 
         public ICommand CreateGameCommand { get; set; }
         public ICommand DeleteGameCommand { get; set; }
-        public ICommand UpdateGameCommand { get; set; } 
+        public ICommand UpdateGameCommand { get; set; }
+        public ICommand ActivisionsGamePriceAverageCommand { get; set; }
+        public ICommand ContendoCount { get; set; }
+        public ICommand CountOfWin98 { get; set; }
+        public ICommand NewestGame{ get; set; }
+        public ICommand FirstRockstar { get; set; }
         public  static bool IsInDesingMode
         { get { var prop = DesignerProperties.IsInDesignModeProperty;
                 return (bool)DependencyPropertyDescriptor.FromProperty(prop, typeof(FrameworkElement)).Metadata.DefaultValue;
@@ -68,6 +73,8 @@ namespace E72LET_HFT_202232.WpfClient
                 DeleteGameCommand = new RelayCommand(() => { Games.Delete(SelectedGame.Id); },
                    () => { return SelectedGame != null; }
                );
+                ActivisionsGamePriceAverageCommand = new RelayCommand(() => { });
+                
             }
             SelectedGame = new Game();
 
