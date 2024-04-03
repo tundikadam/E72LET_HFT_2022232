@@ -1,3 +1,4 @@
+using E72LET_HFT_2022232.Endpoint.Controllers.Services;
 using E72LET_HFT_2022232.Logic;
 using E72LET_HFT_2022232.Models;
 using E72LET_HFT_2022232.Repository;
@@ -41,7 +42,7 @@ namespace E72LET_2022232.Endpoint
             services.AddTransient<IGameLogic, GameLogic>();
             services.AddTransient<IMinimalSystemRequriementsLogic, MinimalSystemRequriementsLogic>();
             services.AddTransient<IStudioLogic, StudioLogic>();
-           
+            services.AddSignalR();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -74,6 +75,7 @@ namespace E72LET_2022232.Endpoint
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<SignalRHub>("/hub");
             });
         }
     }
