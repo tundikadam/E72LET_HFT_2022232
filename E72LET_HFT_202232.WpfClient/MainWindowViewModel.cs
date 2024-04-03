@@ -52,7 +52,7 @@ namespace E72LET_HFT_202232.WpfClient
             
                if(!IsInDesingMode)
             {
-                Games = new RestCollection<Game>("http://localhost:18902/", "game");
+                Games = new RestCollection<Game>("http://localhost:18902/", "game","hub");
                 CreateGameCommand = new RelayCommand(() =>
                 {
                     Games.Add(new Game()
