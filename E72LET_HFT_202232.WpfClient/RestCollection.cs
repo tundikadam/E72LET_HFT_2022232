@@ -219,6 +219,7 @@ namespace E72LET_HFT_202232.WpfClient
             {
                 var error = await response.Content.ReadAsAsync<RestExceptionInfo>();
                 throw new ArgumentException(error.Msg);
+                
             }
 
             response.EnsureSuccessStatusCode();
@@ -233,11 +234,12 @@ namespace E72LET_HFT_202232.WpfClient
             {
                 var error = response.Content.ReadAsAsync<RestExceptionInfo>().GetAwaiter().GetResult();
                 throw new ArgumentException(error.Msg);
+                
             }
 
             response.EnsureSuccessStatusCode();
         }
-
+        
     }
     public class RestExceptionInfo
     {
@@ -351,7 +353,7 @@ namespace E72LET_HFT_202232.WpfClient
             if (hasSignalR)
             {
                 this.rest.PostAsync(item, typeof(T).Name);
-                ;
+                
             }
             else
             {
@@ -366,6 +368,7 @@ namespace E72LET_HFT_202232.WpfClient
                     });
                 });
             }
+            ;
 
         }
 
