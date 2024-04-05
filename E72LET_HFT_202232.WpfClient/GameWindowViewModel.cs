@@ -18,7 +18,7 @@ namespace E72LET_HFT_202232.WpfClient
         public RestCollection<Game> Games { get; set; }
         private Game selectedGame;
         private string errorMessage;
-       
+        bool IsSomethingSelected = false;
 
         public Game SelectedGame
         {
@@ -27,12 +27,27 @@ namespace E72LET_HFT_202232.WpfClient
                 {
                     selectedGame = new Game()
                     {
-                        Name = value.Name,
+                        
+                        
                         Id = value.Id,
+                        StudioId = value.StudioId,
+                        MinimalSystemRequirementsId = value.MinimalSystemRequirementsId,
+                        Name = value.Name,
+                        Age_Limit=value.Age_Limit,  
+                        Appearance = value.Appearance,  
+                        Price = value.Price
+
                     };
+                    IsSomethingSelected = true;
                     OnPropertyChanged();
-                    (DeleteGameCommand as RelayCommand).NotifyCanExecuteChanged();
+
+                    
+
                 }
+                else { selectedGame = new Game();
+                    IsSomethingSelected = false;
+                } (DeleteGameCommand as RelayCommand)?.NotifyCanExecuteChanged();
+                (UpdateGameCommand as RelayCommand)?.NotifyCanExecuteChanged();
             }
         }
 
@@ -63,6 +78,7 @@ namespace E72LET_HFT_202232.WpfClient
                     Games.Add(new Game()
                     {
                         Name = SelectedGame.Name
+                       
                     }); ;
                 });
                
@@ -70,9 +86,13 @@ namespace E72LET_HFT_202232.WpfClient
                 { try { Games.Update(SelectedGame); }
                     catch (ArgumentException ex)
                     { ErrorMessage = ex.Message; } });
-                DeleteGameCommand = new RelayCommand(() => { Games.Delete(SelectedGame.Id); },
-                   () => { return SelectedGame != null; }
-               );
+                DeleteGameCommand = new RelayCommand(() =>
+                {
+                    Games.Delete(SelectedGame.Id);
+                    IsSomethingSelected = false;
+                },
+                   () => IsSomethingSelected != false
+               ); ; ;
                 ActivisionsGamePriceAverageCommand = new RelayCommand(() => { });
                 
             }
