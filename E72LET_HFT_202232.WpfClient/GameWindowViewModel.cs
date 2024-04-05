@@ -48,6 +48,7 @@ namespace E72LET_HFT_202232.WpfClient
                     IsSomethingSelected = false;
                 } (DeleteGameCommand as RelayCommand)?.NotifyCanExecuteChanged();
                 (UpdateGameCommand as RelayCommand)?.NotifyCanExecuteChanged();
+                (CreateGameCommand as RelayCommand)?.NotifyCanExecuteChanged();
             }
         }
 
@@ -76,10 +77,16 @@ namespace E72LET_HFT_202232.WpfClient
                 CreateGameCommand = new RelayCommand(() =>
                 {
                     Games.Add(new Game()
-                    {
-                        Name = SelectedGame.Name
-                       
-                    }); ;
+                    { Id = SelectedGame.Id,
+                        StudioId = SelectedGame.StudioId,
+                        MinimalSystemRequirementsId = SelectedGame.MinimalSystemRequirementsId,
+                        Name = SelectedGame.Name,
+                        Age_Limit = SelectedGame.Age_Limit,
+                        Appearance=SelectedGame.Appearance,
+                        Price=SelectedGame.Price,   
+
+
+                    }); ; ; ;
                 });
                
                 UpdateGameCommand = new RelayCommand(() =>
