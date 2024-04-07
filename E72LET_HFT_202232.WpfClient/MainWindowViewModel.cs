@@ -13,7 +13,7 @@ using System.Windows.Input;
 
 namespace E72LET_HFT_202232.WpfClient
 {
-  public class GameWindowViewModel:ObservableRecipient
+  public class MainWindowViewModel:ObservableRecipient
     {
         public RestCollection<Game> Games { get; set; }
         private Game selectedGame;
@@ -68,7 +68,7 @@ namespace E72LET_HFT_202232.WpfClient
 
         public string ErrorMessage { get => errorMessage; set { SetProperty(ref errorMessage, value); }}
 
-        public GameWindowViewModel()
+        public MainWindowViewModel()
         {
             
                if(!IsInDesingMode)
