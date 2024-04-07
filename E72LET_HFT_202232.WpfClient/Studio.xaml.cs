@@ -10,29 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace E72LET_HFT_202232.WpfClient
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Studio.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Studio : Window
     {
-        public MainWindow()
+        public Studio()
         {
             InitializeComponent();
-        }
-
-        private void Gclick(object sender, RoutedEventArgs e)
-        {
-            Games g = new Games();
-        }
-
-        private void Minclick(object sender, RoutedEventArgs e)
-        {
-            MinimalSystemRequries min=new MinimalSystemRequries(); ;
         }
     }
 }

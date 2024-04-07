@@ -6,15 +6,16 @@
         xmlns:local="clr-namespace:E72LET_HFT_202232.WpfClient"
         mc:Ignorable="d"
         Title="Main" Height="945" Width="833">
-    <Grid>
+    
+        <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Column="0" Content="Games" FontSize="30" Background="Green"></Button>
-        <Button Grid.Column="1" Content="MinimualSystemRequriements" FontSize="30" Background="Red"></Button>
-        <Button Grid.Column="2" Content="Studios" FontSize="30" Background="Blue"></Button>
+        <Button Click="Gclick" Grid.Column="0" Content="Games" FontSize="30" Background="Green"></Button>
+        <Button Click="Minclick" Grid.Column="1" Content="MinimualSystemRequriements" FontSize="30" Background="Red"></Button>
+        <Button  Click="StudioClick"  Grid.Column="2" Content="Studios" FontSize="30" Background="Blue"></Button>
     </Grid>
     
 
