@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:E72LET_HFT_202232.WpfClient"
         mc:Ignorable="d"
-        Title="Game Editor" Height="621" Width="833">
+        Title="Game Editor" Height="945" Width="833">
     <Window.DataContext>
         <local:GameWindowViewModel></local:GameWindowViewModel>
     </Window.DataContext>
@@ -17,23 +17,48 @@
         <ListBox ItemsSource="{Binding Games}" SelectedItem="{Binding SelectedGame }">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Label  Content="{Binding Name }"></Label>
+                    <StackPanel>
+                        <Label  Content="{Binding Name}"></Label>
+                        <Label  Content="{Binding Id}"></Label>
+                        <Label  Content="{Binding StudioId}"></Label>
+                        <Label  Content="{Binding MinimalSystemRequirementsId}"></Label>
+                        <Label  Content="{Binding Age_Limit}"></Label>
+                        <Label  Content="{Binding Appearance}"></Label>
+                        <Label  Content="{Binding Price}"></Label>
+                    </StackPanel>
+                    
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <StackPanel Grid.Column="1" >
-            <Label Content="Name" Background="LightBlue" Padding="10"/>
-            <TextBox Text="{Binding SelectedGame.Name}" Padding="10" Margin="0,0,0,30"></TextBox>
-            <Button Content="Create Game" Command="{Binding CreateGameCommand }" Margin="10" Padding="10"></Button>
-            <Button Content="Delete Game" Command="{Binding DeleteGameCommand }" Margin="10" Padding="10"></Button>
-            <Button Content="Update Game" Command="{Binding UpdateGameCommand }" Margin="10" Padding="10"></Button>
-            <Button Content="ActivisionsGamePriceAverage" Command="{Binding CreateGameCommand }" Margin="10" Padding="10"></Button>
-            <Button Content="ContendoCount" Command="{Binding DeleteGameCommand }" Margin="10" Padding="10"></Button>
-            <Button Content="NewestGame" Command="{Binding UpdateGameCommand }" Margin="10" Padding="10"></Button>
-            <Button Content="FirstRockstar" Command="{Binding CreateGameCommand }" Margin="10" Padding="10"></Button>
-            <Label Content="Non-crud result" Background="LightBlue" Padding="10"/>
-            <TextBox  Padding="10" Margin="0,0,0,30"></TextBox>
+        
+                    <StackPanel Grid.Column="1" >
+                        <Label Content="Name" Background="LightBlue" Padding="0"/>
+                        <TextBox Text="{Binding SelectedGame.Name}" Padding="0" Margin="0,0,0,0"></TextBox>
+                        <Label Content="Id" Background="LightBlue" Padding="0"/>
+                        <TextBox Text="{Binding SelectedGame.Id}" Padding="0" Margin="0,0,0,0"></TextBox>
+                        <Label Content="StudioId" Background="LightBlue" Padding="0"/>
+                        <TextBox Text="{Binding SelectedGame.StudioId}" Padding="0" Margin="0,0,0,0"></TextBox>
+                        <Label Content="MinimalSystemRequirementsId" Background="LightBlue" Padding="0"/>
+                        <TextBox Text="{Binding SelectedGame.MinimalSystemRequirementsId}" Padding="0" Margin="0,0,0,0"></TextBox>
+                        <Label Content="Age_Limit" Background="LightBlue" Padding="0"/>
+                        <TextBox Text="{Binding SelectedGame.Age_Limit}" Padding="0" Margin="0,0,0,0"></TextBox>
+                        <Label Content="Appearance" Background="LightBlue" Padding="0"/>
+                        <TextBox Text="{Binding SelectedGame.Appearance}" Padding="0" Margin="0,0,0,0"></TextBox>
+                        <Label Content="Price" Background="LightBlue" Padding="0"/>
+                        <TextBox Text="{Binding SelectedGame.Price}" Padding="0" Margin="0,0,0,0"></TextBox>
+                        <Button Content="Create Game" Command="{Binding CreateGameCommand }" Margin="5" Padding="5"></Button>
+                        <Button Content="Delete Game" Command="{Binding DeleteGameCommand }" Margin="5" Padding="5"></Button>
+                        <Button Content="Update Game" Command="{Binding UpdateGameCommand }" Margin="5" Padding="5"></Button>
+                        <Button Content="ActivisionsGamePriceAverage" Command="{Binding CreateGameCommand }" Margin="5" Padding="5"></Button>
+                        <Button Content="ContendoCount" Command="{Binding DeleteGameCommand }" Margin="5" Padding="5"></Button>
+                        <Button Content="NewestGame" Command="{Binding UpdateGameCommand }" Margin="5" Padding="5"></Button>
+                        <Button Content="FirstRockstar" Command="{Binding CreateGameCommand }" Margin="5" Padding="5"></Button>
+            <Button Content="FirstRockstar" Command="{Binding CreateGameCommand }" Margin="5" Padding="5"></Button>
+            <Label Content="Non-crud result" Background="LightBlue" Padding="5"/>
+                        <TextBox  Padding="5" Margin="0,0,0,10"></TextBox>
 
-        </StackPanel>
+                    </StackPanel>
+               
+        
     </Grid>
 </Window>
